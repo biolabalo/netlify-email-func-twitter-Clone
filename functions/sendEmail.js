@@ -1,10 +1,10 @@
+require('dotenv').config()
 const result = require('dotenv').config()
 const nodemailer = require('nodemailer');
-const user = result.parsed.user
-const pass = result.parsed.pass
 
 
 export async function handler(event, context, callback){
+  const { user, pass} = process.env
     const min = 10000;
     const max = 99999;
     const num = Math.floor(Math.random() * (max - min + 1)) + min;
