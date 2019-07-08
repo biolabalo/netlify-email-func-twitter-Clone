@@ -28,11 +28,13 @@ export async function handler(event, context, callback){
 
 try{
   let value = await transport.sendMail(mailOptions);
+  console.log(value, mailOptions )
   return {
     statusCode: 200,
     body: 'Success'
   }
 }catch(err){
+console.log(err)
   return {
     statusCode: 400,
     body: 'Failure'
